@@ -3,6 +3,7 @@
 import { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { BsGithub, BsGoogle } from 'react-icons/bs';
+import axios from 'axios';
 
 import Input from '@/app/components/inputs/Input';
 import Button from '@/app/components/Button';
@@ -35,7 +36,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
     if (variant === 'REGISTER') {
-      // axios register
+      axios.post('/api/register', data);
     }
     if (variant === 'LOGIN') {
       // nextauth signin
@@ -70,7 +71,7 @@ const AuthForm = () => {
           />
           <div>
             <Button disabled={isLoading} fullWidth type='submit'>
-              {variant === 'LOGIN' ? 'Sign in' : 'Register'}
+              {variant === 'LOGIN' ? 'Sign in' : 'Sign up'}
             </Button>
           </div>
         </form>
