@@ -65,10 +65,11 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         w-full
         relative
         flex
+        mt-1
         items-center
         space-x-3
         p-3
-        hover:bg-neutral-100
+        hover:bg-sky-50
         rounded-lg
         transition
         cursor-pointer

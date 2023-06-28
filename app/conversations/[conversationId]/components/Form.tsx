@@ -1,7 +1,8 @@
 'use client';
 
 import axios from 'axios';
-import { HiPhoto, HiPaperAirplane } from 'react-icons/hi2';
+import { HiPaperAirplane } from 'react-icons/hi2';
+import { BsImageFill } from 'react-icons/bs';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 import useConversation from '@/app/hooks/useConversation';
@@ -39,10 +40,10 @@ const Form = () => {
     <div className='py-4 bg-white px-4 flex border-t gap-2 lg:gap-4 items-center w-full'>
       <CldUploadButton
         onUpload={handleUpload}
-        options={{ maxFiles: 1 }}
+        options={{ maxFiles: 1, sources: ['local', 'camera'] }}
         uploadPreset='ft0lirx2'
       >
-        <HiPhoto size={32} className='text-sky-500' />
+        <BsImageFill size={32} className='text-sky-500' />
       </CldUploadButton>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -61,7 +62,7 @@ const Form = () => {
         rounded-full p-2 bg-sky-500 hover:bg-sky-600 transition cursor-pointer
         '
         >
-          <HiPaperAirplane size={18} className='text-white' />
+          <HiPaperAirplane size={20} className='text-white' />
         </button>
       </form>
     </div>
