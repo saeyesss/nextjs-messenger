@@ -31,7 +31,6 @@ const Input: React.FC<InputProps> = ({
         {label}
       </label>
       <div className='mt-2'>
-        {' '}
         <input
           type={type}
           id={id}
